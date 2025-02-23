@@ -1,56 +1,75 @@
-# BDD API Testing with Behave
+Projeto Matera Cucumber
+Overview
+This project provides automated tests for the Cat Breeds API (https://catfact.ninja) using Behavior-Driven Development (BDD) practices. The tests are implemented with the Behave framework in Python and utilize the Requests library to perform HTTP calls. The main goal is to verify that the API endpoints behave as expected, including proper handling of both valid and invalid requests.
 
-## Overview
-This project implements automated BDD (Behavior-Driven Development) tests using Behave to validate the `/breeds` endpoint of the `catfact.ninja` API. The tests ensure that the API is functional and correctly returns expected responses.
+Test Scenarios
+The project includes the following test scenarios defined in the breeds.feature file:
 
-## Technologies Used
-- Python
-- Behave (BDD framework)
-- Requests (for HTTP requests)
+Successful Cat Breeds Retrieval:
+Verifies that when a GET request is sent to the /breeds endpoint, the API responds with a 200 status code and returns a list of cat breeds.
 
-## Installation
-### Prerequisites
-Make sure you have Python installed on your system.
+Invalid Endpoint Error Handling:
+Checks that when a GET request is sent to an invalid endpoint (e.g., /invalid-endpoint), the API responds with a 404 status code along with an error message.
 
-### Steps
-1. Clone the repository:
-   ```sh
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
+Technologies Used
+Python: Programming language for implementing tests.
+Behave: BDD testing framework that uses Gherkin syntax to describe test scenarios.
+Requests: Python HTTP library for making API calls.
+Gherkin & BDD: For writing clear, human-readable test scenarios.
+Prerequisites
+Python 3.6 or higher
+pip (Python package installer)
+Installation
+Clone the Repository:
+bash
+Copiar
+git clone <repository-url>
+cd <repository-directory>
+Set Up a Virtual Environment (Recommended):
+bash
+Copiar
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install Dependencies:
+bash
+Copiar
+pip install -r requirements.txt
+If a requirements file is not available, install the necessary packages manually:
+bash
+Copiar
+pip install behave requests
+Project Structure
+bash
+Copiar
+├── features
+│   ├── breeds.feature       # Gherkin feature file defining the test scenarios
+│   └── steps
+│       └── breeds_steps.py  # Step definitions implementing the test logic
+├── README.md                # Project documentation
+└── requirements.txt         # Python dependencies
+Running the Tests
+To execute all test scenarios, navigate to the project root directory and run:
 
-## Running the Tests
-To execute the BDD tests, run the following command:
-```sh
+bash
+Copiar
 behave
-```
+To run a specific scenario, you can use the --name option. For example:
 
-## Test Scenarios
-The tests cover the following scenarios:
+Run the "Successful Cat Breeds Retrieval" scenario:
+bash
+Copiar
+behave --name "Successful Cat Breeds Retrieval"
+Run the "Invalid Endpoint Error Handling" scenario:
+bash
+Copiar
+behave --name "Invalid Endpoint Error Handling"
+Additional Resources
+For further information on the tools and methodologies used in this project, please refer to the following documentation:
 
-### 1. Checking API Availability
-- **Given** the API is available
-- **When** I send a GET request to `/breeds`
-- **Then** I should receive a 200 status code
-- **And** the response should contain a list of breeds
-
-### 2. Sending a GET request with an invalid limit parameter
-- **When** I send a GET request to `/breeds` with an invalid limit
-- **Then** I should receive a 404 status code
-- **And** the response should contain an error message
-
-## Folder Structure
-```
-project-root/
-│── features/
-│   ├── breeds.feature  # BDD feature file
-│   ├── steps/
-│   │   ├── breeds_steps.py  # Step definitions
-│── requirements.txt  # Project dependencies
-│── README.md  # Documentation
-```
-
+JavaScript Documentation
+Cypress Documentation
+GitHub Documentation
+StackOverflow
+QA and Automated Testing Guides
+Jira Documentation
+Gherkin Language Documentation & BDD Practices
