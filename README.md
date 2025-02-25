@@ -77,10 +77,3 @@ For further information on the tools and methodologies used in this project, ple
 - [Jira Documentation](https://www.atlassian.com/software/jira)
 - [Gherkin Language Documentation](https://cucumber.io/docs/gherkin/) & [BDD Practices](https://cucumber.io/docs/bdd/)
 
-## Contributing
-Contributions, issues, and feature requests are welcome! For more details, please see the [GitHub issues page](https://github.com/).
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-Happy testing!
